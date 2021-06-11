@@ -12,27 +12,41 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to lists_path, class: "navbar-brand" do %>
-        <%= image_tag "https://images.unsplash.com/photo-1585647347483-22b66260dfff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" %>
-      <% end %>
+    <div class="main-container">
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <%= link_to lists_path, class: "navbar-brand" do %>
+          <%= image_tag "https://images.unsplash.com/photo-1585647347483-22b66260dfff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80", :class =>"tag"%>
+        <% end %>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
 
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "My Lists", lists_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "New List", new_list_path, class: "nav-link" %>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to "My Lists", lists_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "New List", new_list_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <%= yield %>
+      
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-copyright">
+          This footer is sponsored with <i class="fas fa-heart"></i> by Allociné
+        </div>
       </div>
     </div>
-    <%= yield %>
   </body>
 </html>

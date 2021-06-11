@@ -25,3 +25,35 @@
     }
 }
 
+.card-movies {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 40px;
+}
+.card-movies > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.card-movies h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.card-movies p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+.card-movies .card-movies-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.card-movies-infos {
+  right: 16px;
+  top: -20px;
+  width: 100%;
+}

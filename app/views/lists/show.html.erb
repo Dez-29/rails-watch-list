@@ -1,11 +1,31 @@
-<h1><%= @list.name %> movies</h1>
+<div class="main-container">
+  <div class="home-banner">
+    <div class="container">
+      <h1><%= @list.name %> movies</h1>
+    </div>
+  </div>
+  
+  <div class="btn-container"><%= button_to "Creat a bookmark", new_list_bookmark_path(@list), :class => "btn-create", :method => :get %></div>
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-sm-6">
+        <div class="card-movies">
+          <img src=<%= bookmark.movie.poster_url %> />
+            <div class="card-movies-infos">
+              <div>
+                <h2><%= bookmark.movie.title %></h2>
+                <p><%= bookmark.movie.overview %></p>
+                <p><strong><%= bookmark.comment %></strong></p>
+              </div>
+              <%= link_to bookmark_path(bookmark),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<% @list.bookmarks.each do |bookmark| %>
-  <li class="list-group-item">
-    <%= bookmark.movie.title %> - <%= bookmark.movie.overview %> - <%= bookmark.comment %>
-    <%= link_to 'Remove', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
-  </li>
-<% end %>
-
-<%= link_to 'Back', lists_path %> |
-<%= link_to 'Creat a bookmark', new_list_bookmark_path(@list) %>
+</div>
